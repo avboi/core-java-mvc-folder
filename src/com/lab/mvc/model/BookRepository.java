@@ -14,4 +14,17 @@ public class BookRepository {
     public List<Book> findAll() {
         return new ArrayList<>(books);
     }
+
+    public boolean deleteById(int id) {
+        Book target = null;
+        for (Book b : books) {
+            if (b.getId() == id) {
+                target = b;
+                break;
+            }
+        }
+        if (target == null) return false;
+        books.remove(target);
+        return true;
+    }
 }

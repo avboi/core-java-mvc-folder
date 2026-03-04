@@ -30,6 +30,26 @@ public class BookView {
             System.out.println(b);
         }
     }
+
+    public void showMenuDelete() {
+        System.out.println("\n=== Library Manager (Delete Book) ===");
+        System.out.println("1. View all books");
+        System.out.println("2. Delete book by ID");
+        System.out.println("3. Exit");
+        System.out.print("Choose: ");
+    }
+
+    public int readId() {
+        System.out.print("Enter book ID to delete: ");
+        while (!sc.hasNextInt()) {
+            System.out.print("Invalid input. Enter number: ");
+            sc.next();
+        }
+        int id = sc.nextInt();
+        sc.nextLine();
+        return id;
+    }
+
     public void message(String msg) {
         System.out.println(msg);
     }

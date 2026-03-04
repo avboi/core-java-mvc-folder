@@ -13,11 +13,16 @@ public class BookController {
     public void start() {
         boolean run = true;
         while (run) {
-            view.showMenuMain();
+            view.showMenuDelete();
             int choice = view.readChoice();
             switch (choice) {
                 case 1 -> view.showBooks(repo.findAll());
-                case 2 -> { view.message("Bye!"); run = false; }
+                case 2 -> {
+                    int id = view.readId();
+                    boolean ok = repo.deleteById(id);
+                    view.message(ok ? " Deleted successfully." : "ID not found.");
+                }
+                case 3 -> { view.message("Bye!"); run = false; }
                 default -> view.message("Choose 1 or 2 only.");
             }
         }
