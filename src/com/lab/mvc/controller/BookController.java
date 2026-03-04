@@ -13,11 +13,17 @@ public class BookController {
     public void start() {
         boolean run = true;
         while (run) {
-            view.showMenuMain();
+            view.showMenuAdd();
             int choice = view.readChoice();
             switch (choice) {
                 case 1 -> view.showBooks(repo.findAll());
-                case 2 -> { view.message("Bye!"); run = false; }
+                case 2 -> {
+                    String title = view.readTitle();
+                    String author = view.readAuthor();
+                    repo.addBook(title, author);
+                    view.message("Book added.");
+                }
+                case 3 -> { view.message("Bye!"); run = false; }
                 default -> view.message("Choose 1 or 2 only.");
             }
         }

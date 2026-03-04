@@ -14,4 +14,10 @@ public class BookRepository {
     public List<Book> findAll() {
         return new ArrayList<>(books);
     }
+
+    public Book addBook(String title, String author) {
+        Book b = new Book(nextId++, title, author);
+        books.add(b);
+        return b;
+    }
 }

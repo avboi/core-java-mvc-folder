@@ -33,4 +33,21 @@ public class BookView {
     public void message(String msg) {
         System.out.println(msg);
     }
+
+    public void showMenuAdd() {
+        System.out.println("\n=== Library Manager (Add Book) ===");
+        System.out.println("1. View all books");
+        System.out.println("2. Add a book");
+        System.out.println("3. Exit");
+        System.out.print("Choose: ");
+    }
+
+    public String readTitle() {
+        System.out.print("Enter book title: ");
+        return sc.nextLine().trim();
+    }
+    public String readAuthor() {
+        System.out.print("Enter author name: ");
+        return sc.nextLine().trim();
+    }
 }
