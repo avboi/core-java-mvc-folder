@@ -11,6 +11,20 @@ public class BookView {
         System.out.println("2. Exit");
         System.out.print("Choose: ");
     }
+
+    public void showMenuSearch() {
+        System.out.println("\n=== Library Manager (Search Book) ===");
+        System.out.println("1. View all books");
+        System.out.println("2. Search book by title");
+        System.out.println("3. Exit");
+        System.out.print("Choose: ");
+    }
+
+    public String readSearchKeyword() {
+        System.out.print("Enter title keyword: ");
+        return sc.nextLine().trim();
+    }
+
     public int readChoice() {
         while (!sc.hasNextInt()) {
             System.out.print("Invalid input. Enter number: ");
